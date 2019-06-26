@@ -300,10 +300,10 @@ namespace Mono.Debugger.Soft
 			Socket dbg_sock = null;
 			Socket con_sock = null;
 
-			dbg_sock = new Socket (AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+			dbg_sock = new Socket (dbg_ep.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
 			if (con_ep != null) {
-				con_sock = new Socket (AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+				con_sock = new Socket (con_ep.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 			}
 			
 			ConnectCallback c = new ConnectCallback (ConnectInternal);
